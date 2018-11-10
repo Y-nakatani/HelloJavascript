@@ -8,4 +8,8 @@ function Study(){
 function StudyLet(){
 	let aa = 30;
 	window.alert(xx+aa);
+	for (let i = 0; i < 10; i++){
+		console.log(i);
+	}
 }
+
