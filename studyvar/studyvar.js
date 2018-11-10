@@ -12,4 +12,8 @@ function StudyLet(){
 		console.log(i);
 	}
 }
-
+function StudyConst(){
+	const bb = 40;
+	bb = 20; //err
+	console.log(bb);
+}
