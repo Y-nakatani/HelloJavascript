@@ -17,3 +17,9 @@ function StudyConst(){
 	bb = 20; //err
 	console.log(bb);
 }
+function StudyIf(){
+	let n = 10;
+	if (n < 20){
+		alert("n is small");
+	}
+}
