@@ -16,3 +16,10 @@ function StudySwitch(){
 			break;
 	}
 }
+function StudyWhile(){
+	var n = 0;
+	while(n < 10){
+		console.log(n);
+		n++;
+	}
+}
