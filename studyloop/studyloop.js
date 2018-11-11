@@ -30,4 +30,9 @@ function StudyDo(){
 		n++;
 	}while(n < 10);
 }
-
+function StudyFor(){
+	var ary = ["red", "blue", "yellow"];
+	for(i in ary){
+		console.log(ary[i]);
+	}
+}
