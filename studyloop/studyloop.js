@@ -41,3 +41,12 @@ function StudyForIn(){
 		console.log(i, "<br>");
 	}
 }
+function StudyForOf(){
+	var set = new Set();
+	set.add("tanaka");
+	set.add("suzuki");
+	set.add("satou");
+	for(var value of set){
+		console.log(value);
+	}
+}
