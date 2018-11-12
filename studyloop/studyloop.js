@@ -36,3 +36,8 @@ function StudyFor(){
 		console.log(ary[i]);
 	}
 }
+function StudyForIn(){
+	for (i in navigator){
+		console.log(i, "<br>");
+	}
+}
