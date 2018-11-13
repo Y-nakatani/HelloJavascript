@@ -70,3 +70,9 @@ function StudyForBreakLabel(){
 		}
 	}
 }
+function StudyWith(){
+	with(document){
+		write(URL);
+		write(domain);
+	}
+}
