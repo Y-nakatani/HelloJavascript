@@ -76,3 +76,15 @@ function StudyWith(){
 		write(domain);
 	}
 }
+function StudyThrow(){
+	try{
+		erro = doSomething();
+		if(erro){
+			throw "myException";
+		}
+	}catch(e){
+		console.log(e);
+	}finally{
+		console.log("finally");
+	}
+}
