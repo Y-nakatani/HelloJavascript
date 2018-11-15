@@ -88,4 +88,10 @@ function StudyThrow(){
 		console.log("finally");
 	}
 }
-
+function StudyDebugger(){
+	console.log("a");
+	console.log("b");
+	console.log("c");
+	debugger;
+	console.log("d");
+}
