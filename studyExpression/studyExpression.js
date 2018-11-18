@@ -11,3 +11,8 @@ function deleteObj(){
 void function func(){
 	console.log("hello!!hello!");
 }
+function inExpression(){
+	if("appName" in navigator){
+		console.log("yes");
+	}
+}
