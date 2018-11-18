@@ -8,3 +8,6 @@ function deleteObj(){
 	console.log("delete done");
 	console.log(obj);
 }
+void function func(){
+	console.log("hello!!hello!");
+}
