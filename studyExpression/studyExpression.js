@@ -16,3 +16,12 @@ function inExpression(){
 		console.log("yes");
 	}
 }
+function inExpression2(){
+	var p1 = {
+		name: "tanaka",
+		age: 99
+	}
+	if ("name" in p1){
+		console.log("yes");
+	}
+}
