@@ -25,3 +25,12 @@ function inExpression2(){
 		console.log("yes");
 	}
 }
+function studyInstanceOf(){
+	function preson(){}
+	var p2 = new preson();
+	if(p2 instanceof preson){
+		console.log("yes");
+	}else{
+		console.log("no");
+	}
+}
