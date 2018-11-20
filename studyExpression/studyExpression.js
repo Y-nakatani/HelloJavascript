@@ -34,3 +34,6 @@ function studyInstanceOf(){
 		console.log("no");
 	}
 }
+function studyEvent(){
+	alert("ok!")
+}
