@@ -11,5 +11,10 @@
 		<input type="button" value="inexpression2" onclick="inExpression2()">
 		<input type="button" value="instanceof" onclick="studyInstanceOf()">
 		<input type="button" value="double click" ondblclick="studyEvent()">
+		<input type="text"
+			onkeypress="document.getElementById('t1').innerHTML += '[press]'"
+			onkeydown="document.getElementById('t1').innerHTML += '[down]'"
+			onkeyup="document.getElementById('t1').innerHTML += '[up]'">
+		<div id="t1">event: </div>
 	</body>
 </html>
