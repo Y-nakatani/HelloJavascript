@@ -12,7 +12,6 @@
 		</script>
 	</head>
 	<body>
-		<div id="tt"></div>
 		<input type="button" value="deleteobj" onclick="deleteObj()">
 		<input type="button" value="void" onclick="func()"><!--undefined-->
 		<a href="javascript:void(0)">undefined</a>
@@ -29,5 +28,9 @@
 			onmouseover="document.getElementById('t2').innerHTML += '[over]'"
 			onmouseout="document.getElementById('t2').innerHTML += '[out]'">
 		<div id="t2"></div>
+		<input type="text"
+			onfocus="document.getElementById('t3').innerHTML += '[focus]'"
+			onblur="document.getElementById('t3').innerHTML += '[blur]'">
+		<div id="t3"></div>
 	</body>
 </html>
