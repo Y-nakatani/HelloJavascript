@@ -32,5 +32,9 @@
 			onfocus="document.getElementById('t3').innerHTML += '[focus]'"
 			onblur="document.getElementById('t3').innerHTML += '[blur]'">
 		<div id="t3"></div>
+		<form method="POST" onsubmit="return doSubmit(this)">
+			<input type="text" name="word" value="aaa">
+			<input type="submit" value="ok">
+		</form>
 	</body>
 </html>

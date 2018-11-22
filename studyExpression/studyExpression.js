@@ -37,3 +37,10 @@ function studyInstanceOf(){
 function studyEvent(){
 	alert("ok!")
 }
+function doSubmit(form){
+	if(window.confim("送信しますか？")){
+		return true;
+	}else{
+		return false;
+	}
+}
