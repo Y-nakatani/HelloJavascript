@@ -44,3 +44,6 @@ function doSubmit(form){
 		return false;
 	}
 }
+function doInput(){
+	document.getElementById('t5').innerHTML += "[input]";
+}
