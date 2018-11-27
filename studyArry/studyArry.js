@@ -15,3 +15,11 @@ function checkArray(){
 		alert("yes");
 	}
 }
+function deleteArray(){
+	var kk = new Array(3);
+	kk[0] = "DDD";
+	kk[1] = "EEE";
+	kk[2] = "FFF";
+	delete kk[1];
+	alert(kk);
+}
