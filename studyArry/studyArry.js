@@ -23,3 +23,10 @@ function deleteArray(){
 	delete kk[1];
 	alert(kk);
 }
+function arrayLength(){
+	var ff = new Array(3);
+	ff[0] = "aa";
+	ff[1] = "bb";
+	ff[2] = "cc";
+	alert(ff.length);
+}
