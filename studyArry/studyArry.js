@@ -30,3 +30,9 @@ function arrayLength(){
 	ff[2] = "cc";
 	alert(ff.length);
 }
+function concatArray(){
+	var uu = new Array("sun", "mon", "tue", "wed");
+	var oo = new Array("thu", "fri", "sat");
+	var tt = uu.concat(oo);
+	alert(tt);
+}
