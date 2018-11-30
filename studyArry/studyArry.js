@@ -36,3 +36,9 @@ function concatArray(){
 	var tt = uu.concat(oo);
 	alert(tt);
 }
+function pushArray(){
+	var a = new Array("sun", "mon");
+	a.push("tue");
+	a.push("wed");
+	alert(a);
+}
