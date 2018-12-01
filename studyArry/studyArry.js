@@ -42,3 +42,8 @@ function pushArray(){
 	a.push("wed");
 	alert(a);
 }
+function joinArray(){
+	var b = new Array("2018", "12", "01");
+	var c = b.join("/");
+	alert(c);
+}
