@@ -47,3 +47,8 @@ function joinArray(){
 	var c = b.join("/");
 	alert(c);
 }
+function spliceArray(){
+	var d = new Array("A", "B", "C", "D", "E", "F", "G");
+	var e = d.splice(2, 3, "c", "d", "e");
+	alert(e);
+}
