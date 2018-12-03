@@ -52,3 +52,8 @@ function spliceArray(){
 	var e = d.splice(2, 3, "c", "d", "e");
 	alert(e);
 }
+function reversArray(){
+	var f = new Array(1, 2, 3, 4);
+	f.reverse();
+	alert(f);
+}
