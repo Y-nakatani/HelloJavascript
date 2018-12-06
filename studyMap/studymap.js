@@ -8,6 +8,12 @@ function setNewMap(){
 function forValueMap(){
 	const map = new Map([["width", 160], ["height", 120]]);
 	for (var [key, value] of map){
+		console.log(key, ":", value);
+	}
+}
+function forKeys(){
+	const map = new Map([["width", 160], ["height", 120]]);
+	for (var key of map.keys()){
 		console.log(key, ":", map.get(key));
 	}
 }
