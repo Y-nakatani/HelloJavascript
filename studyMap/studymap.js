@@ -17,3 +17,9 @@ function forKeys(){
 		console.log(key, ":", map.get(key));
 	}
 }
+function forValue(){
+	const map = new Map([["width", 160], ["height", 120]]);
+	for (var value of map.values()){
+		console.log(value);
+	}
+}
