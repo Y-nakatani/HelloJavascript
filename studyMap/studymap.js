@@ -23,3 +23,9 @@ function forValue(){
 		console.log(value);
 	}
 }
+function forEntries(){
+	const map = new Map([["width", 160], ["height", 120], ["tanaka", 170]]);
+	for (var [key, value] of map.entries()){
+		console.log(key, ":", value);
+	}
+}
