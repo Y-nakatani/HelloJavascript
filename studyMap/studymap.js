@@ -29,3 +29,9 @@ function forEntries(){
 		console.log(key, ":", value);
 	}
 }
+var localMap = new Map([["width", 160], ["height", 120]]);
+function forEachValue(){
+	localMap.forEach(function(value){
+		console.log(value);
+	});
+}
