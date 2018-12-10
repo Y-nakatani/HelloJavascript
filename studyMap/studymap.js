@@ -35,3 +35,8 @@ function forEachValue(){
 		console.log(value);
 	});
 }
+function forEachKey(){
+	localMap.forEach(function(value, key){
+		console.log(key, ":", value);
+	})
+}
