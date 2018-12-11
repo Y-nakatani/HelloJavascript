@@ -33,10 +33,16 @@ var localMap = new Map([["width", 160], ["height", 120]]);
 function forEachValue(){
 	localMap.forEach(function(value){
 		console.log(value);
-	});
+	})
 }
 function forEachKey(){
 	localMap.forEach(function(value, key){
 		console.log(key, ":", value);
 	})
+}
+function forEachMap(){
+	localMap.forEach(function(value, key, map){
+		localMap.set(key, value * 2);
+		console.log(key, ":", map.get(key));
+	});
 }
