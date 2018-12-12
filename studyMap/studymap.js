@@ -46,3 +46,9 @@ function forEachMap(){
 		console.log(key, ":", map.get(key));
 	});
 }
+function forEachValueKey(){
+	localMap.forEach(function(value, key){
+		this.set(key, value * 2);
+		console.log(key, ":", this.get(key));
+	},localMap);
+}
