@@ -52,3 +52,8 @@ function forEachValueKey(){
 		console.log(key, ":", this.get(key));
 	},localMap);
 }
+function clearMap(){
+	console.log(localMap);
+	localMap.clear();
+	console.log(localMap);
+}
