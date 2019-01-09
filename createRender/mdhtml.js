@@ -32,16 +32,12 @@ class Render {
       case /^-\s/.test(string):
         var arr = string.split(/\r\n|\r|\n/);
         var ul = arr[0].replace(/^-\s/, '<ul>');
-        //var li = string.replace(/\n\t-\s/gm, '\n\t<li>');
-
-        console.log(arr);
         var hoge = [];
         var fuga = [];
         for (let i = 0; i<arr.length-1; i++){
           hoge[i] = arr[i+1].replace(/^\t-\s/gm, '\n\t<li>');
           fuga[i] = hoge[i] + '</li>'
         }
-        console.log(fuga);
         return ul + fuga.join('') + '\n</ul>';
         break;
     }
