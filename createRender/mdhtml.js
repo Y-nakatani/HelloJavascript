@@ -44,6 +44,24 @@ class Render {
     return string;
   }
 }
+console.log("h1test");
+console.log(Render.md2html('# nivf-の#の'))
 
+console.log("h2test");
+console.log(Render.md2html('## mo+=あ##あ') === '<h2>mo+=あ##あ</h2>')
+
+console.log("h3test");
+console.log(Render.md2html('### mvo###ew023あ') === '<h3>mvo###ew023あ</h3>');
+
+console.log("h4test");
+console.log(Render.md2html('#### 90n####あ') === '<h4>90n####あ</h4>');
+
+console.log("h5test");
+console.log(Render.md2html('##### お#####moe58') === '<h5>お#####moe58</h5>');
+
+console.log("h6test");
+console.log(Render.md2html('###### mc##-=44') === '<h6>mc##-=44</h6>');
+
+//リスト
 console.log(Render.md2html('- hoge###\n\t- #あ+=(#)\n\t- !#R*)あ'))
 
