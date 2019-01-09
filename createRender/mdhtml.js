@@ -1,24 +1,5 @@
 class Render {
   static md2html(string){
-   /* if(string.match(/^######\s/)){
-      var h6 = string.replace(/^######\s/, '<h6>');
-      return h6 + '</h6>';
-    }else if (string.match(/^#####\s/)){
-      var h5 = string.replace(/^######\s/, '<h5>');
-      return h5 + '</h5>';
-    }else if(string.match(/^####\s/)){
-      var h4 = string.replace(/^####\s/, '<h4>');
-      return h4 + '</h4>';
-    }else if(string.match(/^###\s/)){
-      var h3 = string.replace(/^###\s/, '<h3>');
-      return h3 + '</h3>';
-    }else  if(string.match(/^##\s/)){
-      var h2 = string.replace(/^##\s/, '<h2>');
-      return h2 + '</h2>';
-    }else if(string.match(/^#\s/)){
-      var h1 = string.replace(/^#\s/, '<h1>');
-      return h1 + '</h1>';
-    }*/
     switch (true) {
       case /^######\s/.test(string):
         var h6 = string.replace(/^######\s/, '<h6>');
@@ -49,9 +30,19 @@ class Render {
         return p + '</p>';
         break;
       case /^-\s/.test(string):
-        var ul = string.replace(/^-\s/, '<ul>');
-        var li = ul.replace(/\n\t-\s/m, '\n\t<li>');
-        return li + '</li>\n</ul>';
+        var arr = string.split(/\r\n|\r|\n/);
+        var ul = arr[0].replace(/^-\s/, '<ul>');
+        //var li = string.replace(/\n\t-\s/gm, '\n\t<li>');
+
+        console.log(arr);
+        var hoge = [];
+        var fuga = [];
+        for (let i = 0; i<arr.length-1; i++){
+          hoge[i] = arr[i+1].replace(/^\t-\s/gm, '\n\t<li>');
+          fuga[i] = hoge[i] + '</li>'
+        }
+        console.log(fuga);
+        return ul + fuga.join('') + '\n</ul>';
         break;
     }
     return string;
