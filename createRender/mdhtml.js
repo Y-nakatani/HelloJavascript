@@ -23,16 +23,23 @@ class Render {
         return h2 + '</h2>';
         break;
       case /^#\s/.test(string):
-        var h1 = arr[0].replace(/^#\s/, '<h1>');
         if (this.arrLengthCheck(arr)) {
           console.log("1行以上のときだよ")
           var addString = [];
+          if(string.match(/(#)\1+/)){
+            //1行以上で#が2箇所以上あるとき
+            console.log("#2箇所以上あるよ")
+            arr.forEach(function(value){
+              var somh1 = value.replace(/^#\s/gm, '<h1>')
+            });
+          }
           for (let i = 0; i<arr.length-1; i++){
             addString[i] = arr[i+1];
             return h1 + '</h1>' + '\n' + addString;
           }
         }else{
           console.log("1行のときだよ")
+          var h1 = arr[0].replace(/^#\s/, '<h1>')
           return h1 + '</h1>';
         }
         break;
@@ -61,9 +68,9 @@ class Render {
 //todo: h1-h6を一行のときのみにする。改行があればそこで閉じタグをつける
 //todo: pの修正
 console.log("h1test");
-console.log(Render.md2html('# nivf-の#の') === '<h1>nivf-の#の</h1>')
-console.log(Render.md2html('# あけおめ\nわおお') === '<h1>あけおめ</h1>\nわおお')
-
+//console.log(Render.md2html('# nivf-の#の') === '<h1>nivf-の#の</h1>')
+//console.log(Render.md2html('# あけおめ\nわおお') === '<h1>あけおめ</h1>\nわおお')
+console.log(Render.md2html('# あけおめ\n# わおお'))
 
 console.log("h2test");
 console.log(Render.md2html('## mo+=あ##あ') === '<h2>mo+=あ##あ</h2>')
