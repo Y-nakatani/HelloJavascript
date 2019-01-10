@@ -24,9 +24,17 @@ class Render {
         break;
       case /^#\s/.test(string):
         var h1 = arr[0].replace(/^#\s/, '<h1>');
-        console.log("arrの長さ")
-        console.log(this.arrLengthCheck(arr))
-        return h1 + '</h1>';
+        if (this.arrLengthCheck(arr)) {
+          console.log("1行以上のときだよ")
+          var addString = [];
+          for (let i = 0; i<arr.length-1; i++){
+            addString[i] = arr[i+1];
+            return h1 + '</h1>' + '\n' + addString;
+          }
+        }else{
+          console.log("1行のときだよ")
+          return h1 + '</h1>';
+        }
         break;
       case /^```\s/.test(string):
         var p = string.replace(/^```\n/, '<p>');
@@ -53,8 +61,8 @@ class Render {
 //todo: h1-h6を一行のときのみにする。改行があればそこで閉じタグをつける
 //todo: pの修正
 console.log("h1test");
-//console.log(Render.md2html('# nivf-の#の') === '<h1>nivf-の#の</h1>')
-console.log(Render.md2html('# あけおめ\nわおお'))
+console.log(Render.md2html('# nivf-の#の') === '<h1>nivf-の#の</h1>')
+console.log(Render.md2html('# あけおめ\nわおお') === '<h1>あけおめ</h1>\nわおお')
 
 
 console.log("h2test");
