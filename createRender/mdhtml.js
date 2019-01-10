@@ -1,5 +1,6 @@
 class Render {
   static md2html(string){
+    var arr = string.split(/\r\n|\r|\n/);
     switch (true) {
       case /^######\s/.test(string):
         var h6 = string.replace(/^######\s/, '<h6>');
@@ -22,15 +23,16 @@ class Render {
         return h2 + '</h2>';
         break;
       case /^#\s/.test(string):
-        var h1 = string.replace(/^#\s/, '<h1>');
+        var h1 = arr[0].replace(/^#\s/, '<h1>');
+        console.log("arrの長さ")
+        console.log(this.arrLengthCheck(arr))
         return h1 + '</h1>';
         break;
       case /^```\s/.test(string):
-        var p = string.replace(/^```\s/, '<p>');
+        var p = string.replace(/^```\n/, '<p>');
         return p + '</p>';
         break;
       case /^-\s/.test(string):
-        var arr = string.split(/\r\n|\r|\n/);
         var ul = arr[0].replace(/^-\s/, '<ul>');
         var hoge = [];
         var fuga = [];
@@ -43,9 +45,17 @@ class Render {
     }
     return string;
   }
+  static arrLengthCheck(arr){
+    //2行目以降があるかどうか
+    return arr.length > 1;
+  }
 }
+//todo: h1-h6を一行のときのみにする。改行があればそこで閉じタグをつける
+//todo: pの修正
 console.log("h1test");
-console.log(Render.md2html('# nivf-の#の'))
+//console.log(Render.md2html('# nivf-の#の') === '<h1>nivf-の#の</h1>')
+console.log(Render.md2html('# あけおめ\nわおお'))
+
 
 console.log("h2test");
 console.log(Render.md2html('## mo+=あ##あ') === '<h2>mo+=あ##あ</h2>')
@@ -61,6 +71,10 @@ console.log(Render.md2html('##### お#####moe58') === '<h5>お#####moe58</h5>');
 
 console.log("h6test");
 console.log(Render.md2html('###### mc##-=44') === '<h6>mc##-=44</h6>');
+
+console.log("ptest");
+console.log(Render.md2html('```\n aaaおお\n ```') === '<p>aaaおお</p>');
+
 
 //リスト
 console.log(Render.md2html('- hoge###\n\t- #あ+=(#)\n\t- !#R*)あ'))
