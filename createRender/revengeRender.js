@@ -14,8 +14,17 @@ function replaceMan(textList){
   var result  = [];
   reFormat(textList).forEach(function(val){
     if(isPlainText(val)){
-       val = replaceToText(val);
+      val = replaceToText(val);
      }
+    if(isH1(val)){
+      val = h1Replace(val);
+    }
+    if(isH2(val)){
+      val = h2Replace(val);
+    }
+    if(isH3(val)){
+      val = h3Replace(val);
+    }
      result.push(val)
   });
   return resultFormat(result);
@@ -67,7 +76,7 @@ function textReplace(match, p1){
 
 //h1Replace
 function h1Replace(match, p1){
-  return '</h1>' + p1 + '</h1>';
+  return '<h1>' + p1 + '</h1>';
 }
 
 //h2Replace
