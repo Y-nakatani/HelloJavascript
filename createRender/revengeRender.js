@@ -3,11 +3,11 @@ function md2html(string){
   return replaceMan(textList);
 }
 
-
+//ここ書ききる
 var patternText = new RegExp(/^([^#]+)$/)
-var patternH1 = new RegExp(/^#(.+)$/)
-var patternH2 = new RegExp(/^#{2}(.+)$/)
-var patternH3 = new RegExp(/^#{3}(.+)$/)
+var patternH1 = new RegExp(/^#(.+)$/)//#のあとの#を除外
+var patternH2 = new RegExp(/^##(.+)$/)
+var patternH3 = new RegExp(/^###(.+)$/)
 
 //replaceマン
 function replaceMan(textList){
@@ -16,14 +16,14 @@ function replaceMan(textList){
     if(isPlainText(val)){
       val = replaceToText(val);
      }
-    if(isH1(val)){
-      val = replaceToH1(val);
+    if(isH3(val)){
+      val = replaceToH3(val);
     }
     if(isH2(val)){
       val = replaceToH2(val);
     }
-    if(isH3(val)){
-      val = replaceToH3(val);
+    if(isH1(val)){
+      val = replaceToH1(val);
     }
      result.push(val)
   });
@@ -103,4 +103,6 @@ function h3Replacer(match, p1){
   return '<h3>' + p1  + '</h3>';
 }
 
+var test = '### わおわお'
+console.log(test.replace(/^#(?!#)/, '<h1>'))
 console.log(md2html('# hoge\n aaaa\n ## fuga\n ### ewni\n hogeeee'))
