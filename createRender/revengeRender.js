@@ -17,22 +17,34 @@ function replaceMan(textList){
       val = replaceToText(val);
      }
     if(isH1(val)){
-      val = h1Replace(val);
+      val = replaceToH1(val);
     }
     if(isH2(val)){
-      val = h2Replace(val);
+      val = replaceToH2(val);
     }
     if(isH3(val)){
-      val = h3Replace(val);
+      val = replaceToH3(val);
     }
      result.push(val)
   });
   return resultFormat(result);
 }
 
+
+//replaceはここ, replacerは下
 function replaceToText(string){
   //console.log(string)
-  return string.replace(patternText, textReplace);
+  return string.replace(patternText, textReplacer);
+}
+
+function replaceToH1(string){
+  return string.replace(patternH1, h1Replacer);
+}
+function replaceToH2(string){
+  return string.replace(patternH2, h2Replacer);
+}
+function replaceToH3(string){
+  return string.replace(patternH3, h3Replacer);
 }
 
 //成形マン
@@ -69,23 +81,25 @@ function isH3(string){
   return patternH3.test(string);
 }
 
-//pReplace
-function textReplace(match, p1){
+
+//--------------replacerども
+//pReplacer
+function textReplacer(match, p1){
   return '<p>' + p1 + '</p>';
 }
 
-//h1Replace
-function h1Replace(match, p1){
+//h1Replacer
+function h1Replacer(match, p1){
   return '<h1>' + p1 + '</h1>';
 }
 
-//h2Replace
-function h2Replace(match, p1){
+//h2Replacer
+function h2Replacer(match, p1){
   return '<h2>' + p1  + '</h2>';
 }
 
-//h3Replace
-function h3Replace(match, p1){
+//h3Replacer
+function h3Replacer(match, p1){
   return '<h3>' + p1  + '</h3>';
 }
 
