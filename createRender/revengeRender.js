@@ -27,6 +27,7 @@ function replaceMan(textList){
     }
      result.push(val)
   });
+  console.log(result)
   return resultFormat(result);
 }
 
