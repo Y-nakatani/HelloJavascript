@@ -104,6 +104,7 @@ function h3Replacer(match, p1){
   return '<h3>' + p1  + '</h3>';
 }
 
-var test = '### わおわお'
-console.log(test.replace(/^#(?!#)/, '<h1>'))
+var test = '# わおわお'
+console.log(test.replace(/^#[^#]*?$/, '<h1>'))
+
 console.log(md2html('# hoge\n aaaa\n ## fuga\n ### ewni\n hogeeee'))
